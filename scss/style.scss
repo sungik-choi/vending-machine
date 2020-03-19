@@ -7,6 +7,7 @@ $grey-shadow: #505050;
 $point-color: #fea00a;
 $black: #010101;
 $blue: #2979ff;
+$green: #0da921;
 $button-color: rgba(255, 255, 255, 0.2);
 $button-hover: rgba(255, 255, 255, 0.5);
 
@@ -93,6 +94,35 @@ body {
       .item-price {
         background-color: $blue;
         color: $white;
+      }
+    }
+    .purchased {
+      .item-name {
+        animation-duration: 1s;
+        animation-name: disappear;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+      }
+      .item-price {
+        background-color: $green;
+        color: $white;
+      }
+      @keyframes disappear {
+        0% {
+          transform: scale(1);
+        }
+
+        30% {
+          transform: scale(0);
+        }
+
+        70% {
+          transform: scale(0);
+        }
+
+        100% {
+          transform: scale(1);
+        }
       }
     }
   }

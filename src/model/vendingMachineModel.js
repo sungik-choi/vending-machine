@@ -89,6 +89,7 @@ class VendingMachineModel extends Model {
   }
 
   purchaseSelectedProduct(item) {
+    clearTimeout(this.timer);
     const insertedCoin = this.getChangeFromStatus();
     const change = calculateChanges(insertedCoin, item.price);
     this.getBackChange(change);
@@ -105,11 +106,12 @@ class VendingMachineModel extends Model {
     clearTimeout(this.timer);
     this.timer = setTimeout(() => {
       const change = this.getChangeFromStatus();
-      this.getBackChange(change);
       this.state = {
         ...this.state,
+        selectedNumber: "",
         logs: [...this.state.logs, LOG_MESSAGE.timeout(TIMER_SEC)],
       };
+      this.getBackChange(change);
     }, TIMER_SEC * 1000);
   }
 
