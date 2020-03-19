@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url(./reset.css);
+body {
+  font-family: -apple-system, Helvetica, sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  body button {
+    border: none;
+    background-color: none; }
+  body h1 {
+    font-size: 0; }
+  body .wrapper {
+    width: 75%;
+    height: calc(100vh - (1.25rem * 2));
+    padding: 1.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    body .wrapper > div {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  body .product {
+    padding: 1.25rem;
+    background-color: #fff;
+    border-radius: 8px; }
+    body .product-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+      text-align: center; }
+    body .product-item {
+      padding: 0.5rem;
+      position: relative;
+      border-radius: 4px; }
+      body .product-item .item-index {
+        position: absolute;
+        font-size: 0.875rem;
+        top: 0.8rem;
+        left: 0.8rem;
+        color: rgba(0, 0, 0, 0.3); }
+      body .product-item .item-name,
+      body .product-item .item-price {
+        display: block; }
+      body .product-item .item-name {
+        width: 80px;
+        height: calc(80px - 25px);
+        border-radius: 8px;
+        padding-top: 25px;
+        font-size: 3rem;
+        margin-bottom: 2px; }
+      body .product-item .item-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        color: #505050;
+        background-color: #eee;
+        border-radius: 0.75rem;
+        height: 1.5rem; }
+    body .product .selected .item-price {
+      background-color: #2979ff;
+      color: #fff; }
+  body .selector {
+    background-color: #010101;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-left: 1.25rem;
+    display: flex;
+    flex-direction: column; }
+    body .selector .price-window {
+      display: flex;
+      padding: 1.25rem 0.5rem;
+      margin-bottom: 1rem;
+      height: 1rem;
+      justify-content: space-between;
+      align-items: center; }
+      body .selector .price-window .select-number {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #010101;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 35px; }
+      body .selector .price-window .price-input {
+        font-size: 2rem;
+        color: #fff; }
+    body .selector .select-button-wrap {
+      margin-bottom: 1rem; }
+      body .selector .select-button-wrap .select-button-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.75rem; }
+        body .selector .select-button-wrap .select-button-list li {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          body .selector .select-button-wrap .select-button-list li button {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.2s ease;
+            color: #fff;
+            font-size: 1.5rem; }
+            body .selector .select-button-wrap .select-button-list li button:hover {
+              background-color: rgba(255, 255, 255, 0.5); }
+          body .selector .select-button-wrap .select-button-list li .command {
+            background-color: #fea00a;
+            font-size: 1rem; }
+            body .selector .select-button-wrap .select-button-list li .command:hover {
+              background-color: #fff;
+              color: #fea00a; }
+    body .selector .message-window {
+      width: 200px;
+      font-size: 0.875rem;
+      border-radius: 4px;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      background-color: #fff;
+      height: 120px; }
+      body .selector .message-window .message {
+        height: inherit;
+        overflow-y: scroll;
+        word-break: break-all; }
+        body .selector .message-window .message li {
+          line-height: 1.2;
+          margin-bottom: 6px; }
+  body .wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #010101;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-left: 1.25rem; }
+    body .wallet ul {
+      display: grid;
+      grid-gap: 1rem; }
+      body .wallet ul li {
+        display: flex;
+        line-height: 0; }
+        body .wallet ul li button,
+        body .wallet ul li div {
+          box-sizing: border-box;
+          border-radius: 20px; }
+        body .wallet ul li button {
+          width: 6rem;
+          height: 40px;
+          background-color: rgba(255, 255, 255, 0.2);
+          transition: background-color 0.2s ease;
+          color: #fff;
+          margin-right: 1rem; }
+          body .wallet ul li button:hover {
+            background-color: rgba(255, 255, 255, 0.5); }
+        body .wallet ul li div {
+          width: 40px;
+          height: 40px;
+          color: #fff;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+    body .wallet .wallet-sum {
+      color: #fff;
+      text-align: right;
+      margin-top: 3rem;
+      position: relative;
+      font-size: 2rem; }
+      body .wallet .wallet-sum::before {
+        content: "총합";
+        font-size: 0.875rem;
+        position: absolute;
+        left: 0;
+        top: -1.2rem; }

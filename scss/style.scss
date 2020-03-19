@@ -1,0 +1,240 @@
+@import "./reset.css";
+
+// Color
+$white: #fff;
+$grey: #eee;
+$grey-shadow: #505050;
+$point-color: #fea00a;
+$black: #010101;
+$blue: #2979ff;
+$button-color: rgba(255, 255, 255, 0.2);
+$button-hover: rgba(255, 255, 255, 0.5);
+
+// Size
+$item-width: 80px;
+$item-gap: 25px;
+$default-gap: 1.25rem;
+
+// Typography
+$sans-serif: -apple-system, Helvetica, sans-serif;
+$small-font-size: 0.875rem;
+
+body {
+  font-family: $sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    border: none;
+    background-color: none;
+  }
+  h1 {
+    font-size: 0;
+  }
+  .wrapper {
+    width: 75%;
+    height: calc(100vh - (#{$default-gap} * 2));
+    padding: $default-gap 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > div {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+  .product {
+    padding: $default-gap;
+    background-color: $white;
+    border-radius: 8px;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+      text-align: center;
+    }
+    &-item {
+      padding: 0.5rem;
+      position: relative;
+      border-radius: 4px;
+      .item-index {
+        position: absolute;
+        font-size: $small-font-size;
+        top: 0.8rem;
+        left: 0.8rem;
+        color: rgba(0, 0, 0, 0.3);
+      }
+      .item-name,
+      .item-price {
+        display: block;
+      }
+      .item-name {
+        width: $item-width;
+        height: calc(#{$item-width} - #{$item-gap});
+        border-radius: 8px;
+        padding-top: $item-gap;
+        font-size: 3rem;
+        margin-bottom: 2px;
+      }
+      .item-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        color: $grey-shadow;
+        background-color: $grey;
+        border-radius: 0.75rem;
+        height: 1.5rem;
+      }
+    }
+    .selected {
+      .item-price {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+  .selector {
+    background-color: $black;
+    border-radius: 8px;
+    padding: $default-gap;
+    margin-left: $default-gap;
+    display: flex;
+    flex-direction: column;
+    .price-window {
+      display: flex;
+      padding: $default-gap 0.5rem;
+      margin-bottom: 1rem;
+      height: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      .select-number {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        border-radius: 4px;
+        background-color: $white;
+        color: $black;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 35px;
+      }
+      .price-input {
+        font-size: 2rem;
+        color: $white;
+      }
+    }
+    .select-button-wrap {
+      margin-bottom: 1rem;
+      .select-button-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.75rem;
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: $button-color;
+            transition: background-color 0.2s ease;
+            color: $white;
+            font-size: 1.5rem;
+            &:hover {
+              background-color: $button-hover;
+            }
+          }
+          .command {
+            background-color: $point-color;
+            font-size: 1rem;
+            &:hover {
+              background-color: $white;
+              color: $point-color;
+            }
+          }
+        }
+      }
+    }
+    .message-window {
+      width: 200px;
+      font-size: $small-font-size;
+      border-radius: 4px;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      background-color: $white;
+      height: 120px;
+      .message {
+        height: inherit;
+        overflow-y: scroll;
+        word-break: break-all;
+        li {
+          line-height: 1.2;
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+  .wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $black;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-left: $default-gap;
+    ul {
+      display: grid;
+      grid-gap: 1rem;
+      li {
+        display: flex;
+        line-height: 0;
+        button,
+        div {
+          box-sizing: border-box;
+          border-radius: 20px;
+        }
+        button {
+          width: 6rem;
+          height: 40px;
+          background-color: $button-color;
+          transition: background-color 0.2s ease;
+          color: $white;
+          margin-right: 1rem;
+          &:hover {
+            background-color: $button-hover;
+          }
+        }
+        div {
+          width: 40px;
+          height: 40px;
+          color: $white;
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .wallet-sum {
+      color: $white;
+      text-align: right;
+      margin-top: 3rem;
+      position: relative;
+      font-size: 2rem;
+      &::before {
+        content: "총합";
+        font-size: $small-font-size;
+        position: absolute;
+        left: 0;
+        top: -1.2rem;
+      }
+    }
+  }
+}

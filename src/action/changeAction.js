@@ -1,0 +1,2 @@
+export const GIVE_CHANGES = "GIVE_CHANGES";
+export const GET_BACK_CHANGES = "GET_BACK_CHANGES";

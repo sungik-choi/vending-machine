@@ -1,0 +1,32 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "`Ed/Won` 코드스쿼드 자판기 앱",
+  "main": "index.js",
+  "scripts": {
+    "document": "npx jsdoc -c jsdoc.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codesquad-memeber-2020/vm-5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codesquad-memeber-2020/vm-5/issues"
+  },
+  "homepage": "https://github.com/codesquad-memeber-2020/vm-5#readme",
+  "dependencies": {
+    "docdash": "^1.2.0",
+    "jsdoc": "^3.6.3",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0"
+  }
+}
