@@ -20,7 +20,7 @@
   "dependencies": {
     "docdash": "^1.2.0",
     "jsdoc": "^3.6.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.13.1"
   },
   "devDependencies": {
